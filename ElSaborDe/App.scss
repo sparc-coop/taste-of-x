@@ -1,0 +1,100 @@
+﻿@import "Pages/EditProfile";
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #F5F6F7;
+    box-sizing: border-box;
+}
+
+.header {
+    padding-bottom: 100px;
+}
+
+label,
+input,
+textarea,
+select{
+    display: block;
+    font-size: .875em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="button"],
+input[type="submit"] {
+    display: unset;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input,
+select {
+    margin-bottom: 20px;
+    height: 48px;
+}
+
+textarea {
+    margin-bottom: 30px;
+    resize: none;
+    min-height: 150px;
+}
+
+input,
+select,
+textarea {
+    padding: 15px;
+}
+
+.logo {
+    padding: 20px 0;
+    img{
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+    } 
+
+}
+
+.icon__camera {
+    width: 27px;
+    display: block;
+    margin: 0 auto;
+}
+
+.upload {
+    color: #737680;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.cancel {
+   
+}
+
+.save {
+    background-color: #FB295A;
+    color: #fff;
+}
+
+.section {
+    &__title {
+        text-align: center;
+        margin-top: 80px;
+    }
+}
+
+.underline {
+    background-color: #FB295A;
+    width: 40px;
+    min-height: 4px;
+    display: block;
+    margin: 10px auto 41px;
+}

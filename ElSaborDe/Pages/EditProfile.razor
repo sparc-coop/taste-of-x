@@ -1,0 +1,114 @@
+﻿@page "/edit-profile"
+@inject HttpClient Http
+@inject NavigationManager NavigateManager
+
+<div class="edit-profile">
+    <div class="section__info">
+        <div class="restaurant__picture">
+            <img class="icon__camera" src="/assets/camera.png" />
+            <p class="upload">AÑADIR FOTO</p>
+        </div>
+
+        <form class="restaurant__info">
+            <label>Restuarant Name</label>
+            <input type="text" />
+
+            <label>Category</label>
+            <select>
+                <option value="Casual Dinning">Casual Dining</option>
+            </select>
+
+            <label>Cuisine</label>
+            <input type="text" />
+
+            <label>Opening Hours</label>
+            <select>
+                <option>12:00 PM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+            </select>
+
+            <label>Closing Hours</label>
+            <select>
+                <option>12:00 PM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>3:00 PM</option>
+                <option>4:00 PM</option>
+            </select>
+
+            <label>Days Open</label>
+            <input />
+
+            <label>Habla a</label>
+            <div class="group">
+                <input placeholder="Address Line 1" />
+                <input placeholder="Address Line 2" />
+                <input placeholder="City" />
+                <input placeholder="State/Province/Region" />
+            </div>
+            <label>Numero de telefono</label>
+            <input placeholder="Mobile or Phone" />
+
+            <label>Sobre restaurante</label>
+            <textarea f>Coastal themed casual dining and drinking experience specialising in seafood.</textarea>
+            <input class="cancel" type="button" value="CANCEL" />
+            <input class="save" type="submit" value="SAVE" />
+        </form>
+    </div>
+
+    <div class="section__gallery">
+        <h2 class="section__title">GALERIA</h2>
+        <span class="underline"></span>
+
+        <div class="add-gallery-image">
+            <img class="icon__camera"src="/assets/camera.png"/>
+            <p class="upload">AÑADIR FOTO</p>
+        </div>
+
+        <div class="list__gallery">
+            @for(int i = 0; i < count; i++ )
+            {
+                <img src="/assets/gallery1.png" />
+            }
+        </div>
+    </div>
+
+    <div class="section__menu">
+        <h2 class="section__title">Menu</h2>
+        <span class="underline"></span>
+
+        <div class="list__menu">
+
+            @for(int i = 0; i < menuCount; i++)
+            {
+                <div class="container__menu">
+                    <img class="menu__image" src="/assets/menu1.png" />
+                    <p class="menu__name">Comida <span class="menu__edit">(editar)</span></p>
+                    <p class="menu__page-number">2 paginas</p>
+                </div>
+            }
+        </div>
+        <div class="menu__button" @onclick="NavigateToCreateMenu">
+            <img src="/assets/menu.png" />
+            <p>CREAR MENU</p>
+        </div>
+      </div>
+</div>
+@code {
+    private Gallery[] galleryList;
+    public int count = 8;
+    public int menuCount = 3;
+
+    protected override async Task OnInitializedAsync()
+    {
+        galleryList = await Http.GetFromJsonAsync<Gallery[]>("sample-data/gallery.json");
+    }
+
+    public void NavigateToCreateMenu()
+    {
+        NavigateManager.NavigateTo("create-menu");
+    }
+}

@@ -1,0 +1,108 @@
+﻿.edit-profile {
+    font-size: 1rem;
+}
+
+.section {
+    &__info {
+        padding: 40px 20px;
+        background-color: #fff;
+    }
+
+    &__gallery, &__menu {
+        padding: 0 20px;
+    }
+}
+
+.restaurant {
+    &__picture {
+        background-color: #F5F6F7;
+        padding: 117px 0;
+        border: 2px dashed #737680;
+        border-radius: 10px;
+        margin-bottom: -80px;
+        cursor: pointer;
+        position: relative;
+        top: -130px;
+    }
+
+    &__info {
+        .group {
+            input {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.add-gallery-image {
+    cursor: pointer;
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 85px 0;
+    border: 2px dashed #737680;
+    margin-bottom: 22px;
+}
+
+.list {
+    &__gallery {
+        img {
+            width: 150px;
+            margin-bottom: 12px;
+            margin-right: 12px;
+            display: inline-block;
+
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-wrap: wrap;
+
+        .container {
+            &__menu {
+                margin-bottom: 40px;
+                margin-right: 12px;
+
+                &:nth-child(even) {
+                    margin-right: 0;
+                }
+
+                .menu {
+                    &__image {
+                        width: 150px;
+                        display: block;
+                        margin-bottom: 8px;
+                    }
+
+                    &__name {
+                    }
+
+                    &__edit {
+                        color: #1C74DB;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu__button {
+    color: #fff;
+    display: flex;
+    height: 55px;
+    border-radius: 10px;
+    background-color: #FB295A;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+    cursor: pointer;
+
+    img {
+        width: 15px;
+        margin-right: 10px;
+    }
+}
